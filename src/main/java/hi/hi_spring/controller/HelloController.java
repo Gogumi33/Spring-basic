@@ -33,7 +33,7 @@ public class HelloController {
 
     @GetMapping("hello-api-json")
     @ResponseBody // https의 body부에 직접 데이터를 넣기 위한 어노테이션.
-    // 동적 - 🌟🌟🌟 API방식 : "JSON" ===> 이게 우리 해커톤방식.
+    // 동적 - 🌟🌟🌟 API방식 : "JSON" ===> 이게 우리 해커톤 진행방식.
     public Hello helloApiJson(@RequestParam("name") String name) {
         Hello hello = new Hello();
         hello.setName(name);
