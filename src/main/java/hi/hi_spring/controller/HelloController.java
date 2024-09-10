@@ -26,16 +26,19 @@ public class HelloController {
 
     @GetMapping("hello-api")
     @ResponseBody // https의 body부에 직접 데이터를 넣기 위한 어노테이션.
-    // 동적 - 🌟 API방식
+    // 동적 - 🌟 API방식 [위 hello-mvc와 결과는 같음]
     public String helloApi(@RequestParam("name") String name) {
         return "hello " + name; // 여기서부터는 html로 렌더링하는게 아닌 https의 body부에 직접 주입.
     }
 
     @GetMapping("hello-api-json")
     @ResponseBody // https의 body부에 직접 데이터를 넣기 위한 어노테이션.
-    // 동적 - 🌟🌟🌟 API방식 : "JSON"
-    public String helloApiJson(@RequestParam("name") String name) {
+    // 동적 - 🌟🌟🌟 API방식 : "JSON" ===> 이게 우리 해커톤방식.
+    public Hello helloApiJson(@RequestParam("name") String name) {
+        Hello hello = new Hello();
+        hello.setName(name);
 
+        return hello;
     }
 
     static class Hello {
