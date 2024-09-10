@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class HiSpringApplication {
-
+	// adapt java 21
 	public static void main(String[] args) {
 		SpringApplication.run(HiSpringApplication.class, args);
 	}
